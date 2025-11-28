@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Étape 5 : exposer le port
-EXPOSE 5000
+EXPOSE 5001
 
 # Étape 6 : lancer l'application
 CMD ["python", "app.py"]
