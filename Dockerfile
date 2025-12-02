@@ -1,18 +1,12 @@
-# Étape 1 : image de base Python
-FROM python:3.10-slim
+FROM python:3.11-slim
 
-# Étape 2 : définir le dossier de travail dans le container
-WORKDIR /app
+WORKDIR /home/app
 
-# Étape 3 : copier et installer les dépendances
-COPY requirements.txt .
+COPY requirements.txt /home/app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Étape 4 : copier tout le reste du projet
-COPY . .
+COPY . /home/app/
 
-# Étape 5 : exposer le port
-EXPOSE 5001
+EXPOSE 5000
 
-# Étape 6 : lancer l'application
 CMD ["python", "app.py"]
